@@ -1,12 +1,14 @@
 package org.unyw
 
 
+import android.content.res.Resources
 import android.os.Build
 import android.text.TextUtils
 import java.io.File
 import java.io.FileInputStream
 import java.math.BigInteger
 import java.security.MessageDigest
+import kotlin.streams.asSequence
 
 
 val systemArch
@@ -20,6 +22,19 @@ val systemArch
         return "armhf" // If nothing is found, try with the most common one
     }()
 
+/** Convert int to density-independent pixels (dp) */
+val kotlin.Int.dp: Int
+    get() = (this / Resources.getSystem().displayMetrics.density).toInt()
+
+/** Return safe escaped string for using as bash arg */
+fun bashStr(str: String) = "'${str.replace("'", """'"'"'""")}'"
+/** Return safe escaped string for using as javascript arg */
+fun jsStr(str: String) = "'${str.replace("\\","\\\\").replace("'", "\\'")}'"
+
+
+//https://stackoverflow.com/questions/46943860/idiomatic-way-to-generate-a-random-alphanumeric-string-in-kotlin
+fun rndStr(length: Int, allowedChars : List<Char> =  ('A'..'Z') + ('a'..'z') + ('0'..'9')) =
+    (1..length).map { allowedChars.random() }.joinToString("")
 
 
 fun checkMD5(md5: String?, updateFile: File?): Boolean {

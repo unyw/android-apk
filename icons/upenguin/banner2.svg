@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg id="svg8" width="32.921mm" height="15.009mm" version="1.1" viewBox="0 0 32.921 15.009" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata id="metadata5">
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g id="layer4" transform="translate(-59.604 -40.355)">
+  <path id="rect96" d="m59.604 40.355v14.773a16.47 7.3534 0 0 1 16.46-7.2673 16.47 7.3534 0 0 1 16.461 7.2321v-14.738zm32.921 14.946a16.47 7.3534 0 0 1-7e-3 0.0629h7e-3zm-32.921 0.03665v0.02626h0.0021a16.47 7.3534 0 0 1-0.0021-0.02626z" fill="#1565c0" stroke-width=".19996"/>
+  <path id="path2396" d="m76.065 49.236-3.0711 1.5055 3.1398 3.3178 3.0024-3.3178z" fill="#c69100" stroke-width="0" style="paint-order:normal"/>
+  <rect id="rect883" transform="rotate(45)" x="83.325" y="-21.523" width=".73909" height="2.8825" fill="#fff" stroke-width=".23571"/>
+  <rect id="rect883-3" transform="rotate(-45)" x="19.713" y="82.253" width=".73909" height="2.8825" fill="#fff" stroke-width=".23571"/>
+  <rect id="rect883-7" transform="rotate(45)" x="86.98" y="-25.167" width=".73909" height="2.8825" fill="#fff" stroke-width=".23571"/>
+  <rect id="rect883-3-5" transform="rotate(-45)" x="23.357" y="85.908" width=".73909" height="2.8825" fill="#fff" stroke-width=".23571"/>
+  <path id="text1847" transform="matrix(.26458 0 0 .26458 59.604 40.355)" d="m41.035 33.59-9.418 11.193v4.252h9.418v3.4766h4.5039v-3.4766h2.3359v-4.0098h-2.3359v-11.436h-4.5039zm43.338 0-9.416 11.193v4.252h9.416v3.4766h4.5059v-3.4766h2.3359v-4.0098h-2.3359v-11.436h-4.5059zm-43.338 5.584v5.8516h-4.9766l4.9766-5.8516zm43.338 0v5.8516h-4.9746l4.9746-5.8516z" fill="#c69100"/>
+ </g>
+</svg>
