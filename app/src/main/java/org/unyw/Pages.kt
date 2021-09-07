@@ -183,7 +183,7 @@ val PageSplashscreen = """
     <body>
     <div class="loader"></div>
     <script>
-    setTimeout( () => location.replace(location.hash.substr(1)), 1000)
+    setTimeout( () => location.replace(location.hash.substr(1)), 3000)
     </script>
     </body>
     </html>

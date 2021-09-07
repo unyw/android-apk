@@ -46,12 +46,13 @@ fi
 
 
 # Launch debian system and set unyw environment
-./proot -0 -L -l -H -p -r ./rootfs -w /                                  \
+PROOT_NO_SECCOMP=1 PROOT_ASSUME_NEW_SECCOMP=1 ./proot -0 -L -l -H -p -r ./rootfs -w /                                  \
     -b /dev -b /proc -b /sys -b "$UNYW_STORAGE:/storage/unyw" \
     -b "$INTERNAL_STORAGE/storage:/storage/internal!" \
     -b "$EXTERNAL_STORAGE:/storage/external!" -b /proc/mounts:/etc/mtab $EXTRA_BINDINGS \
     /usr/bin/env PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin                   \
     UNYW_TOKEN_API="$UNYW_TOKEN_API" UNYW_TOKEN_VNC="$UNYW_TOKEN_VNC" UNYW_TOKEN_SSH="$UNYW_TOKEN_SSH" \
     SHELL="/bin/ash" LD_PRELOAD="$LD_PRELOAD_DIR/libdisableselinux.so" LIBGL_ALWAYS_SOFTWARE=1       \
+    PULSE_SERVER=tcp:localhost:12332 \
     SCREEN_WIDTH="$SCREEN_WIDTH" SCREEN_HEIGHT="$SCREEN_HEIGHT" \
     DISPLAY=:3200 TMPDIR="/tmp" HOME="/root" PREFIX="/usr" LD_LIBRARY_PATH="/usr/lib"  sh -c "$1"

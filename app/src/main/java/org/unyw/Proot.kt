@@ -45,6 +45,7 @@ fun installProot(ms: MainService){
             copyFile("binaries/$systemArch/busybox", "busybox")
             copyFile("binaries/$systemArch/proot", "proot")
             copyFile("binaries/$systemArch/libtalloc.so.2", "libtalloc.so.2")
+            copyFile("binaries/$systemArch/pulse.tar.xz", "pulse.tar.xz")
 
             copyFile("install.sh", "install.sh")
             copyFile("proot.sh", "proot.sh")
@@ -102,11 +103,17 @@ fun startProot(ms: MainService){
     if(!isInstalled(ms)){
         installProot(ms)
         thread {
-            Thread.sleep(1000)
+            Thread.sleep(3500)
             mainActivity?.webView?.post {
-                mainActivity?.webView?.loadUrl("${mainActivity?.WEBSITE}/apps/home/index.html")
+                mainActivity?.webView?.evaluateJavascript("window.location.replace('${mainActivity?.WEBSITE}/apps/home/index.html')") {}
             }
         }
+    }
+
+
+    thread {
+        Thread.sleep(2000)
+        startPulseaudio()
     }
 
     sshLock.release(MAX_SSH_CONNECTIONS) // Tell ssh server that it could start!

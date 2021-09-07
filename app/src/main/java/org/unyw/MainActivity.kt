@@ -236,7 +236,7 @@ class MainActivity : AppCompatActivity() {
                                 )
                             }
                         }
-                        webView?.loadUrl("$WEBSITE/internal/INSTALL.html")
+                        webView?.evaluateJavascript("window.location.replace('$WEBSITE/internal/INSTALL.html')") {}
                         startMainService()
                     }
                     setButton(DialogInterface.BUTTON_NEGATIVE, "Cancel") { _, _ -> finish()}

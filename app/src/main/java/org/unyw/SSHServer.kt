@@ -90,7 +90,7 @@ class SSHConnectionManager(private val hostname: String, private val username: S
         var ret: String? = ""
         if (!session.isConnected) open()
         var channel = session.openChannel("exec") as ChannelExec
-        channel.setCommand(". /etc/profile; export DISPLAY=:3200; PS1='\\w\\\$ ' ;$command")
+        channel.setCommand(". /etc/profile; export PULSE_SERVER=tcp:localhost:12332; export DISPLAY=:3200; PS1='\\w\\\$ ' ;$command")
         channel.setEnv("PATH", "/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin")
         channel.inputStream = null
         val out = PrintStream(channel.outputStream)

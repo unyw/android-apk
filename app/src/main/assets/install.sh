@@ -14,6 +14,10 @@ echo $INTERNAL_STORAGE
 echo "nameserver 8.8.8.8" >> "$INTERNAL_STORAGE/rootfs/etc/resolv.conf"
 echo "nameserver 8.8.4.4" >> "$INTERNAL_STORAGE/rootfs/etc/resolv.conf"
 
+# Extract pulseaudio
+./busybox tar -xJf pulse.tar.xz
+./busybox rm -f pulse.tar.xz
+
 # Add fake machine id
 echo "$MACHINE_ID" >> "$INTERNAL_STORAGE/rootfs/etc/machine-id"
 
